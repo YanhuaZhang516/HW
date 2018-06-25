@@ -18,12 +18,12 @@ Data= np.loadtxt('/home/yanhua/hw3/hw3_dataset/ldaData.txt')
 # In[4]:
 
 
-plt.scatter(Data[:50, 0], Data[:50, 1],color='red', marker='o', label='class1') # 前50个样本的散点图
-plt.scatter(Data[50:93, 0], Data[50:93, 1],color='blue', marker='x', label='class2') # 中间43个样本的散点图
-plt.scatter(Data[93:, 0], Data[93:, 1],color='green', marker='+', label='class3') # 后44个样本的散点图
+plt.scatter(Data[:50, 0], Data[:50, 1],color='red', marker='o', label='class1') 
+plt.scatter(Data[50:93, 0], Data[50:93, 1],color='blue', marker='x', label='class2') 
+plt.scatter(Data[93:, 0], Data[93:, 1],color='green', marker='+', label='class3') 
 plt.xlabel('X1')
 plt.ylabel('X2')
-plt.legend(loc=2) # 把说明放在左上角，具体请参考官方文档
+plt.legend(loc=2)
 plt.show()
 
 
@@ -41,8 +41,7 @@ y=np.squeeze(y.T)
 # In[6]:
 
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0) # 为了看模型在没有见过数据集上的表现，随机拿出数据集中30%的部分做测试
-
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0) 
 
 # In[7]:
 
