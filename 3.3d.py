@@ -25,48 +25,21 @@ ir4=Data.iloc[:,3].values #  petal-width
 sort=Data.iloc[:,4].values # Classsig
 X=Data.iloc[:,[0,1,2,3]].values
 
-
-# In[130]:
-
-
 U=np.mean(X,axis=0)
 x=X-U
 sigma=np.mean(np.multiply(x,x),axis=0)
 x=x/(sigma**0.5)
 
-
-# In[131]:
-
-
 C=1/150*np.dot(x.T,x)
 d=np.cov(X.T)
 
-
-# In[132]:
-
-
 evalues,evectors=np.linalg.eig(C)
-
-
-# In[133]:
-
 
 sorted_indices=np.argsort(-evalues)
 sorted_evectors=evectors[:,sorted_indices]
-
-
-# In[134]:
-
-
 X_v=X-U
 std_x=np.std(X_v)
 X_v=X_v/std_x
-print (X_v.shape)
-print (sorted_evectors.shape)
-
-
-# In[139]:
-
 
 from sklearn.metrics import mean_squared_error as mse
 #component=n
